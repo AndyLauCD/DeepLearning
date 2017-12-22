@@ -27,6 +27,7 @@ def _read32(bytestream):
     dt = numpy.dtype(numpy.uint32).newbyteorder('>')
     return numpy.frombuffer(bytestream.read(4), dtype=dt)[0]
 
+
 def dense_to_one_hot(labels_dense, num_classes):
     """Convert class labels from scalars to one-hot vectors."""
     num_labels = labels_dense.shape[0]
@@ -34,6 +35,7 @@ def dense_to_one_hot(labels_dense, num_classes):
     labels_one_hot = numpy.zeros((num_labels, num_classes))
     labels_one_hot.flat[index_offset + labels_dense.ravel()] = 1
     return labels_one_hot
+
 
 def extract_images(f):
     """Extract the images into a 4D uint8 numpy array [index, y, x, depth].
@@ -196,6 +198,7 @@ class DataSet(object):
       end = self._index_in_epoch
       return self._images[start:end], self._labels[start:end]
 
+
 def read_data_sets(train_dir,
                    fake_data=False,
                    one_hot=False,
@@ -260,8 +263,6 @@ def read_data_sets(train_dir,
 
 # filepath_test_images = 'C:\\Users\dchen\Documents\GitHub\DeepLearning\MINIST_data\t10k-images-idx3-ubyte.gz'
 # print(filepath_test_images)
-
-#
 # mnist = read_data_sets("MINIST_data/", one_hot=True)
 # print(mnist.train.images.shape, mnist.train.labels.shape)
 # print(mnist.test.images.shape, mnist.test.labels.shape)
