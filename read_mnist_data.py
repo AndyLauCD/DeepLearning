@@ -263,6 +263,7 @@ def read_data_sets(train_dir,
 
 # filepath_test_images = 'C:\\Users\dchen\Documents\GitHub\DeepLearning\MINIST_data\t10k-images-idx3-ubyte.gz'
 # print(filepath_test_images)
+
 # mnist = read_data_sets("MINIST_data/", one_hot=True)
 # print(mnist.train.images.shape, mnist.train.labels.shape)
 # print(mnist.test.images.shape, mnist.test.labels.shape)
