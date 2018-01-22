@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @StartTime : 2018/1/19 16:44
-# @EndTime : 2018/1/19 16:44
+# @EndTime : 2018/1/22 16:44
 # @Author  : Andy
 # @Site    : 
 # @File    : tensorflow_6_1.py
@@ -172,5 +172,6 @@ def run_benchmark():
         objective = tf.nn.l2_loss(pool5)
         grad = tf.gradients(objective, parameters)
         time_tensorflow_run(sess, grad, "Forward-backward")
+
 
 run_benchmark()
