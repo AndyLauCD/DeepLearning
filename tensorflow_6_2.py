@@ -60,7 +60,7 @@ def fc_op(input_op, name, n_out, p):
             scope+"w",
             shape=[n_in, n_out],
             dtype=tf.float32,
-            initializer=tf.contrib.layers.xaver_initializer()
+            initializer=tf.contrib.layers.xavier_initializer()
         )
         biases = tf.Variable(
             tf.constant(0.1, shape=[n_out], dtype=tf.float32),
